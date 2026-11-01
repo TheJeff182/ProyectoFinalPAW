@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProyectoFinalPAW.Core\ProyectoFinalPAW.Core.csproj" />
+    <ProjectReference Include="..\ProyectoFinalPAW.Infrastructure\ProyectoFinalPAW.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>59bf4cf8-eb9a-4e0b-9e44-90923fbe66ac</UserSecretsId>
+  </PropertyGroup>
+
+</Project>

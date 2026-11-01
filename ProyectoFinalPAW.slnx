@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ProyectoFinalPAW.Core/ProyectoFinalPAW.Core.csproj" />
+  <Project Path="ProyectoFinalPAW.Infrastructure/ProyectoFinalPAW.Infrastructure.csproj" />
+  <Project Path="ProyectoFinalPAW.Web/ProyectoFinalPAW.Web.csproj" />
+</Solution>

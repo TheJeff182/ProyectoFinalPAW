@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1 class="mb-4">Dashboard</h1>
+
+@* Se muestra una sección por cada fuente. *@
+@foreach (var source in Model.Dashboard.Sources)
+{
+    <section class="mb-5">
+        <h2 class="h4">@source.Name <small class="text-muted">(@source.Category)</small></h2>
+
+        @* Se avisa cuando la fuente no devolvió contenido. *@
+        @if (source.Items.Count == 0)
+        {
+            <div class="alert alert-warning">No se pudo cargar el contenido de esta fuente.</div>
+        }
+        else
+        {
+            @* Los items son mostrados en una cuadrícula de tarjetas. *@
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                @foreach (var item in source.Items)
+                {
+                    <div class="col">
+                        <partial name="_MediaCard" model="item" />
+                    </div>
+                }
+            </div>
+        }
+    </section>
+}
