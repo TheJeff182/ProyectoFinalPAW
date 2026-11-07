@@ -1,0 +1,29 @@
+@page
+@model TVMazeModel
+@{
+    ViewData["Title"] = "TVMaze";
+}
+
+<h1 class="mb-4">TVMaze</h1>
+
+<section class="mb-5">
+    <h2 class="h4">@Model.Source.Name <small class="text-muted">(@Model.Source.Category)</small></h2>
+
+    @* Se avisa cuando TVMaze no devolvió contenido. *@
+    @if (Model.Source.Items.Count == 0)
+    {
+        <div class="alert alert-warning">No se pudo cargar el contenido de TVMaze.</div>
+    }
+    else
+    {
+        @* Los shows son mostrados con la misma cuadrícula de tarjetas compartida. *@
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+            @foreach (var item in Model.Source.Items)
+            {
+                <div class="col">
+                    <partial name="_MediaCard" model="item" />
+                </div>
+            }
+        </div>
+    }
+</section>
