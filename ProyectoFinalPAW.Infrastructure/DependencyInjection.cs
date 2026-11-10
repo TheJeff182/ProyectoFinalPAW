@@ -16,6 +16,7 @@ public static class DependencyInjection
         // Se registra un Provider por cada API (una línea por API).
         services.AddHttpClient<IContentProvider, ImgflipProvider>();
         services.AddHttpClient<IContentProvider, TvMazeProvider>();
+        services.AddHttpClient<IContentProvider, SpaceflightNewsProvider>();
 
         // Se registra el agregador del dashboard.
         services.AddScoped<DashboardAggregator>();
